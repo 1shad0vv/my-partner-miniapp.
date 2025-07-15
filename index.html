@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PadelMatch Mini App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div id="screens">
+        <!-- Splash Screen -->
+        <div class="screen" id="splash">
+            <div class="logo">🎾</div>
+            <h1>PadelMatch</h1>
+            <div class="loader"></div>
+        </div>
+
+        <!-- Onboarding Screen 1 -->
+        <div class="screen hidden" id="onboarding1">
+            <h1>Добро пожаловать в PadelMatch</h1>
+            <p>Находите соперников и устраивайте матчи.</p>
+            <button id="next1">Далее</button>
+        </div>
+
+        <!-- Onboarding Screen 2 -->
+        <div class="screen hidden" id="onboarding2">
+            <h1>Система рейтингов</h1>
+            <p>Играйте и повышайте свой рейтинг ELO.</p>
+            <button id="next2">Далее</button>
+        </div>
+
+        <!-- Onboarding Screen 3 -->
+        <div class="screen hidden" id="onboarding3">
+            <h1>Удобный поиск</h1>
+            <p>Найдите игроков по уровню и местоположению.</p>
+            <button id="next3">Далее</button>
+        </div>
+
+        <!-- Login Screen -->
+        <div class="screen hidden" id="login">
+            <h1>Вход через Telegram</h1>
+            <p>Для продолжения войдите в свой аккаунт</p>
+            <button id="loginBtn">Войти</button>
+        </div>
+
+        <!-- Main Menu -->
+        <div class="screen hidden" id="mainMenu">
+            <h1>PadelMatch</h1>
+            <div class="menu-cards">
+                <div class="menu-card" data-screen="search">
+                    <div class="card-icon">🔍</div>
+                    <div class="card-title">Найти игрока</div>
+                </div>
+                <div class="menu-card" data-screen="createMatch">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-title">Создать матч</div>
+                </div>
+                <div class="menu-card" data-screen="profile">
+                    <div class="card-icon">👤</div>
+                    <div class="card-title">Профиль</div>
+                </div>
+                <div class="menu-card" data-screen="rankings">
+                    <div class="card-icon">🏆</div>
+                    <div class="card-title">Рейтинг</div>
+                </div>
+                <div class="menu-card" data-screen="settings">
+                    <div class="card-icon">⚙️</div>
+                    <div class="card-title">Настройки</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Screen -->
+        <div class="screen hidden" id="search">
+            <div class="header">
+                <button class="back-btn" data-screen="mainMenu">← Назад</button>
+                <h2>Найти игрока</h2>
+            </div>
+            <div class="search-filters">
+                <input type="text" id="searchInput" placeholder="Поиск по имени">
+                <select id="levelFilter">
+                    <option value="">Все уровни</option>
+                    <option value="beginner">Начинающий</option>
+                    <option value="intermediate">Средний</option>
+                    <option value="advanced">Продвинутый</option>
+                </select>
+            </div>
+            <div id="playersList" class="players-list"></div>
+        </div>
+
+        <!-- Create Match Screen -->
+        <div class="screen hidden" id="createMatch">
+            <div class="header">
+                <button class="back-btn" data-screen="mainMenu">← Назад</button>
+                <h2>Создать матч</h2>
+            </div>
+            <form id="matchForm">
+                <div class="form-group">
+                    <label>Дата матча:</label>
+                    <input type="date" id="matchDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Время матча:</label>
+                    <input type="time" id="matchTime" required>
+                </div>
+                <div class="form-group">
+                    <label>Местоположение:</label>
+                    <input type="text" id="matchLocation" placeholder="Введите адрес корта" required>
+                </div>
+                <div class="form-group">
+                    <label>Уровень игры:</label>
+                    <select id="matchLevel" required>
+                        <option value="">Выберите уровень</option>
+                        <option value="beginner">Начинающий</option>
+                        <option value="intermediate">Средний</option>
+                        <option value="advanced">Продвинутый</option>
+                    </select>
+                </div>
+                <button type="submit">Создать матч</button>
+            </form>
+        </div>
+
+        <!-- Profile Screen -->
+        <div class="screen hidden" id="profile">
+            <div class="header">
+                <button class="back-btn" data-screen="mainMenu">← Назад</button>
+                <h2>Профиль</h2>
+            </div>
+            <div class="profile-info">
+                <div class="avatar">👤</div>
+                <h3 id="userName">Иван Иванов</h3>
+                <div class="rating">
+                    <span class="rating-label">Рейтинг ELO:</span>
+                    <span class="rating-value" id="userRating">1650</span>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Матчей сыграно:</span>
+                        <span class="stat-value">15</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Побед:</span>
+                        <span class="stat-value">8</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Поражений:</span>
+                        <span class="stat-value">7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Match Results Screen -->
+        <div class="screen hidden" id="matchResults">
+            <div class="header">
+                <button class="back-btn" data-screen="mainMenu">← Назад</button>
+                <h2>Результаты матча</h2>
+            </div>
+            <div class="match-score">
+                <div class="team">
+                    <h3>Команда 1</h3>
+                    <div class="score-input">
+                        <button class="score-btn" onclick="changeScore('team1', -1)">-</button>
+                        <span id="team1Score">0</span>
+                        <button class="score-btn" onclick="changeScore('team1', 1)">+</button>
+                    </div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team">
+                    <h3>Команда 2</h3>
+                    <div class="score-input">
+                        <button class="score-btn" onclick="changeScore('team2', -1)">-</button>
+                        <span id="team2Score">0</span>
+                        <button class="score-btn" onclick="changeScore('team2', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <button id="submitResult">Сохранить результат</button>
+        </div>
+
+        <!-- Rankings Screen -->
+        <div class="screen hidden" id="rankings">
+            <div class="header">
+                <button class="back-btn" data-screen="mainMenu">← Назад</button>
+                <h2>Рейтинги</h2>
+            </div>
+            <div id="rankingsList" class="rankings-list"></div>
+        </div>
+
+        <!-- Settings Screen -->
+        <div class="screen hidden" id="settings">
+            <div class="header">
+                <button class="back-btn" data-screen="mainMenu">← Назад</button>
+                <h2>Настройки</h2>
+            </div>
+            <div class="settings-list">
+                <div class="setting-item">
+                    <span>Уведомления</span>
+                    <input type="checkbox" id="notifications" checked>
+                </div>
+                <div class="setting-item">
+                    <span>Темная тема</span>
+                    <input type="checkbox" id="darkTheme">
+                </div>
+                <div class="setting-item">
+                    <span>Язык</span>
+                    <select id="language">
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
