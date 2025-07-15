@@ -656,9 +656,8 @@ select.form-control {
 
 /* END PERPLEXITY DESIGN SYSTEM */
 ```css
-/* Сокращённая версия стилей style.css для MyPartner */
 :root {
-    /* Telegram theme variables mapped to design system values */
+    /* Keep Telegram theme variables for compatibility */
     --tg-theme-bg-color: var(--color-background);
     --tg-theme-text-color: var(--color-text);
     --tg-theme-hint-color: var(--color-text-secondary);
@@ -666,382 +665,322 @@ select.form-control {
     --tg-theme-button-color: var(--color-primary);
     --tg-theme-button-text-color: var(--color-btn-primary-text);
     --tg-theme-secondary-bg-color: var(--color-secondary);
+
+    /* Map custom variables to design system */
     --primary-color: var(--color-primary);
-    --secondary-color: var(--color-success);
-    --accent-color: var(--color-warning);
-
-    /* Colors */
-    --color-background: rgba(252, 252, 249, 1);
-    --color-surface: rgba(255, 255, 253, 1);
-    --color-text: rgba(19, 52, 59, 1);
-    --color-text-secondary: rgba(98, 108, 113, 1);
-    --color-primary: rgba(33, 128, 141, 1);
-    --color-primary-hover: rgba(29, 116, 128, 1);
-    --color-primary-active: rgba(26, 104, 115, 1);
-    --color-secondary: rgba(94, 82, 64, 0.12);
-    --color-secondary-hover: rgba(94, 82, 64, 0.2);
-    --color-secondary-active: rgba(94, 82, 64, 0.25);
-    --color-border: rgba(94, 82, 64, 0.2);
-    --color-btn-primary-text: rgba(252, 252, 249, 1);
-    --color-card-border: rgba(94, 82, 64, 0.12);
-    --color-card-border-inner: rgba(94, 82, 64, 0.12);
-    --color-error: rgba(192, 21, 47, 1);
-    --color-success: rgba(33, 128, 141, 1);
-    --color-warning: rgba(168, 75, 47, 1);
-    --color-info: rgba(98, 108, 113, 1);
-    --color-focus-ring: rgba(33, 128, 141, 0.4);
-    --color-select-caret: rgba(19, 52, 59, 0.8);
-
-    /* Common style patterns */
-    --focus-ring: 0 0 0 3px var(--color-focus-ring);
-    --focus-outline: 2px solid var(--color-primary);
-    --status-bg-opacity: 0.15;
-    --status-border-opacity: 0.25;
-    --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-    /* RGB versions for opacity control */
-    --color-success-rgb: 33, 128, 141;
-    --color-error-rgb: 192, 21, 47;
-    --color-warning-rgb: 168, 75, 47;
-    --color-info-rgb: 98, 108, 113;
-
-    /* Typography */
-    --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
-        BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
-        Monaco, Consolas, monospace;
-    --font-size-xs: 11px;
-    --font-size-sm: 12px;
-    --font-size-base: 14px;
-    --font-size-md: 14px;
-    --font-size-lg: 16px;
-    --font-size-xl: 18px;
-    --font-size-2xl: 20px;
-    --font-size-3xl: 24px;
-    --font-size-4xl: 30px;
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 550;
-    --font-weight-bold: 600;
-    --line-height-tight: 1.2;
-    --line-height-normal: 1.5;
-    --letter-spacing-tight: -0.01em;
-
-    /* Spacing */
-    --space-0: 0;
-    --space-1: 1px;
-    --space-2: 2px;
-    --space-4: 4px;
-    --space-6: 6px;
-    --space-8: 8px;
-    --space-10: 10px;
-    --space-12: 12px;
-    --space-16: 16px;
-    --space-20: 20px;
-    --space-24: 24px;
-    --space-32: 32px;
-
-    /* Border Radius */
-    --radius-sm: 6px;
-    --radius-base: 8px;
-    --radius-md: 10px;
-    --radius-lg: 12px;
-    --radius-full: 9999px;
-
-    /* Shadows */
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
-        0 2px 4px -1px rgba(0, 0, 0, 0.02);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
-        0 4px 6px -2px rgba(0, 0, 0, 0.02);
-    --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.03);
-
-    /* Animation */
-    --duration-fast: 150ms;
-    --duration-normal: 250ms;
-    --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
-
-    /* Layout */
-    --container-sm: 640px;
-    --container-md: 768px;
-    --container-lg: 1024px;
-    --container-xl: 1280px;
+    --secondary-color: var(--color-primary-hover);
+    --text-color: var(--color-text);
+    --bg-color: var(--color-background);
+    --card-bg: var(--color-surface);
 }
 
-/* Dark mode colors */
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* Update Telegram theme variables for dark mode */
-        --tg-theme-bg-color: var(--color-background);
-        --tg-theme-text-color: var(--color-text);
-        --tg-theme-hint-color: var(--color-text-secondary);
-        --tg-theme-link-color: var(--color-primary);
-        --tg-theme-button-color: var(--color-primary);
-        --tg-theme-button-text-color: var(--color-btn-primary-text);
-        --tg-theme-secondary-bg-color: var(--color-secondary);
-        --primary-color: var(--color-primary);
-        --secondary-color: var(--color-success);
-        --accent-color: var(--color-warning);
-
-        /* Colors for dark mode */
-        --color-background: rgba(31, 33, 33, 1);
-        --color-surface: rgba(38, 40, 40, 1);
-        --color-text: rgba(245, 245, 245, 1);
-        --color-text-secondary: rgba(167, 169, 169, 0.7);
-        --color-primary: rgba(50, 184, 198, 1);
-        --color-primary-hover: rgba(45, 166, 178, 1);
-        --color-primary-active: rgba(41, 150, 161, 1);
-        --color-secondary: rgba(119, 124, 124, 0.15);
-        --color-secondary-hover: rgba(119, 124, 124, 0.25);
-        --color-secondary-active: rgba(119, 124, 124, 0.3);
-        --color-border: rgba(119, 124, 124, 0.3);
-        --color-error: rgba(255, 84, 89, 1);
-        --color-success: rgba(50, 184, 198, 1);
-        --color-warning: rgba(230, 129, 97, 1);
-        --color-info: rgba(167, 169, 169, 1);
-        --color-focus-ring: rgba(50, 184, 198, 0.4);
-        --color-btn-primary-text: rgba(19, 52, 59, 1);
-        --color-card-border: rgba(119, 124, 124, 0.2);
-        --color-card-border-inner: rgba(119, 124, 124, 0.15);
-        --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-        --button-border-secondary: rgba(119, 124, 124, 0.2);
-        --color-border-secondary: rgba(119, 124, 124, 0.2);
-        --color-select-caret: rgba(245, 245, 245, 0.8);
-
-        /* Common style patterns - updated for dark mode */
-        --focus-ring: 0 0 0 3px var(--color-focus-ring);
-        --focus-outline: 2px solid var(--color-primary);
-        --status-bg-opacity: 0.15;
-        --status-border-opacity: 0.25;
-
-        /* RGB versions for dark mode */
-        --color-success-rgb: 50, 184, 198;
-        --color-error-rgb: 255, 84, 89;
-        --color-warning-rgb: 230, 129, 97;
-        --color-info-rgb: 167, 169, 169;
-    }
-}
-
-/* Data attribute for manual theme switching */
-[data-color-scheme="dark"] {
-    /* Update Telegram theme variables for dark mode */
-    --tg-theme-bg-color: var(--color-background);
-    --tg-theme-text-color: var(--color-text);
-    --tg-theme-hint-color: var(--color-text-secondary);
-    --tg-theme-link-color: var(--color-primary);
-    --tg-theme-button-color: var(--color-primary);
-    --tg-theme-button-text-color: var(--color-btn-primary-text);
-    --tg-theme-secondary-bg-color: var(--color-secondary);
-    --primary-color: var(--color-primary);
-    --secondary-color: var(--color-success);
-    --accent-color: var(--color-warning);
-
-    --color-background: rgba(31, 33, 33, 1);
-    --color-surface: rgba(38, 40, 40, 1);
-    --color-text: rgba(245, 245, 245, 1);
-    --color-text-secondary: rgba(167, 169, 169, 0.7);
-    --color-primary: rgba(50, 184, 198, 1);
-    --color-primary-hover: rgba(45, 166, 178, 1);
-    --color-primary-active: rgba(41, 150, 161, 1);
-    --color-secondary: rgba(119, 124, 124, 0.15);
-    --color-secondary-hover: rgba(119, 124, 124, 0.25);
-    --color-secondary-active: rgba(119, 124, 124, 0.3);
-    --color-border: rgba(119, 124, 124, 0.3);
-    --color-error: rgba(255, 84, 89, 1);
-    --color-success: rgba(50, 184, 198, 1);
-    --color-warning: rgba(230, 129, 97, 1);
-    --color-info: rgba(167, 169, 169, 1);
-    --color-focus-ring: rgba(50, 184, 198, 0.4);
-    --color-btn-primary-text: rgba(19, 52, 59, 1);
-    --color-card-border: rgba(119, 124, 124, 0.15);
-    --color-card-border-inner: rgba(119, 124, 124, 0.15);
-    --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    --color-border-secondary: rgba(119, 124, 124, 0.2);
-    --color-select-caret: rgba(245, 245, 245, 0.8);
-
-    /* Common style patterns - updated for dark mode */
-    --focus-ring: 0 0 0 3px var(--color-focus-ring);
-    --focus-outline: 2px solid var(--color-primary);
-    --status-bg-opacity: 0.15;
-    --status-border-opacity: 0.25;
-
-    /* RGB versions for dark mode */
-    --color-success-rgb: 50, 184, 198;
-    --color-error-rgb: 255, 84, 89;
-    --color-warning-rgb: 230, 129, 97;
-    --color-info-rgb: 167, 169, 169;
-}
-
-[data-color-scheme="light"] {
-    /* Update Telegram theme variables for light mode */
-    --tg-theme-bg-color: var(--color-background);
-    --tg-theme-text-color: var(--color-text);
-    --tg-theme-hint-color: var(--color-text-secondary);
-    --tg-theme-link-color: var(--color-primary);
-    --tg-theme-button-color: var(--color-primary);
-    --tg-theme-button-text-color: var(--color-btn-primary-text);
-    --tg-theme-secondary-bg-color: var(--color-secondary);
-    --primary-color: var(--color-primary);
-    --secondary-color: var(--color-success);
-    --accent-color: var(--color-warning);
-
-    --color-background: rgba(252, 252, 249, 1);
-    --color-surface: rgba(255, 255, 253, 1);
-    --color-text: rgba(19, 52, 59, 1);
-    --color-text-secondary: rgba(98, 108, 113, 1);
-    --color-primary: rgba(33, 128, 141, 1);
-    --color-primary-hover: rgba(29, 116, 128, 1);
-    --color-primary-active: rgba(26, 104, 115, 1);
-    --color-secondary: rgba(94, 82, 64, 0.12);
-    --color-secondary-hover: rgba(94, 82, 64, 0.2);
-    --color-secondary-active: rgba(94, 82, 64, 0.25);
-    --color-border: rgba(94, 82, 64, 0.2);
-    --color-btn-primary-text: rgba(252, 252, 249, 1);
-    --color-card-border: rgba(94, 82, 64, 0.12);
-    --color-card-border-inner: rgba(94, 82, 64, 0.12);
-    --color-error: rgba(192, 21, 47, 1);
-    --color-success: rgba(33, 128, 141, 1);
-    --color-warning: rgba(168, 75, 47, 1);
-    --color-info: rgba(98, 108, 113, 1);
-    --color-focus-ring: rgba(33, 128, 141, 0.4);
-
-    /* RGB versions for light mode */
-    --color-success-rgb: 33, 128, 141;
-    --color-error-rgb: 192, 21, 47;
-    --color-warning-rgb: 168, 75, 47;
-    --color-info-rgb: 98, 108, 113;
-}
-
-/* Base styles */
-html {
-    font-size: var(--font-size-base);
-    font-family: var(--font-family-base);
-    line-height: var(--line-height-normal);
-    color: var(--color-text);
-    background-color: var(--color-background);
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
 }
 
 body {
-    margin: 0;
-    padding: 0;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    background: var(--color-background);
     color: var(--color-text);
-    letter-spacing: var(--letter-spacing-tight);
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-    font-size: var(--font-size-4xl);
+.screen {
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    max-width: 400px;
+    padding: var(--space-20); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    transition: opacity var(--duration-normal) var(--ease-standard);
+    background: var(--color-background);
 }
 
-h2 {
-    font-size: var(--font-size-3xl);
+.screen.hidden { 
+    opacity: 0; 
+    pointer-events: none; 
 }
 
-h3 {
-    font-size: var(--font-size-2xl);
+/* Splash */
+#splash { 
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover)); 
+    color: var(--color-btn-primary-text); 
 }
 
-h4 {
+.logo { 
+    font-size: var(--font-size-4xl); 
+    margin-bottom: var(--space-20); 
+}
+
+.loader { 
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255,255,255,.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite; 
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary); 
+    color: var(--color-btn-primary-text);
+    border: none; 
+    padding: var(--space-12) var(--space-24); 
+    border-radius: var(--radius-base); 
+    font-size: var(--font-size-base); 
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-standard);
+}
+
+button:hover { 
+    background: var(--color-primary-hover); 
+    transform: translateY(-2px); 
+}
+
+button:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+/* Main menu */
+#mainMenu {
+    justify-content: flex-start;
+    padding-top: var(--space-32);
+}
+
+.menu-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    width: 100%;
+}
+
+.menu-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    padding: var(--space-20);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-card-border);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.menu-card:hover {
+    background: var(--color-primary);
+    color: var(--color-btn-primary-text);
+}
+
+.card-icon {
     font-size: var(--font-size-xl);
 }
 
-h5 {
-    font-size: var(--font-size-lg);
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: var(--space-20);
 }
 
-h6 {
-    font-size: var(--font-size-md);
-}
-
-p {
-    margin: 0 0 var(--space-16) 0;
-}
-
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: color var(--duration-fast) var(--ease-standard);
-}
-
-a:hover {
-    color: var(--color-primary-hover);
-}
-
-code,
-pre {
-    font-family: var(--font-family-mono);
-    font-size: calc(var(--font-size-base) * 0.95);
-    background-color: var(--color-secondary);
-    border-radius: var(--radius-sm);
-}
-
-code {
-    padding: var(--space-1) var(--space-4);
-}
-
-pre {
-    padding: var(--space-16);
-    margin: var(--space-16) 0;
-    overflow: auto;
-    border: 1px solid var(--color-border);
-}
-
-pre code {
+.back-btn {
     background: none;
-    padding: 0;
+    border: none;
+    color: var(--color-primary);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    padding: var(--space-8);
 }
 
-/* Add mobile portrait responsive styling */
+.back-btn:hover { 
+    color: var(--color-primary-hover); 
+    background: none;
+    transform: none;
+}
+
+/* Search */
+.search-filters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    width: 100%;
+    margin-bottom: var(--space-20);
+}
+
+.search-filters input,
+.search-filters select,
+.form-group input,
+.form-group select {
+    display: block;
+    width: 100%;
+    padding: var(--space-8) var(--space-12);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+    font-size: var(--font-size-base);
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: border-color var(--duration-fast) var(--ease-standard),
+        box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.search-filters input:focus,
+.search-filters select:focus,
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--color-primary);
+    outline: var(--focus-outline);
+}
+
+.search-filters select,
+.form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: var(--select-caret-light);
+    background-repeat: no-repeat;
+    background-position: right var(--space-12) center;
+    background-size: 16px;
+    padding-right: var(--space-32);
+}
+
+@media (prefers-color-scheme: dark) {
+    .search-filters select,
+    .form-group select {
+        background-image: var(--select-caret-dark);
+    }
+}
+
+.players-list {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.player-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    padding: var(--space-16);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-card-border);
+    margin-bottom: var(--space-10);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.player-card:hover {
+    background: var(--color-primary);
+    color: var(--color-btn-primary-text);
+}
+
+.player-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    color: var(--color-btn-primary-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-bold);
+}
+
+/* Profile */
+.profile-info {
+    text-align: center;
+    width: 100%;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    color: var(--color-btn-primary-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--space-20);
+}
+
+.rating {
+    background: var(--color-surface);
+    padding: var(--space-16);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-card-border);
+    margin: var(--space-20) 0;
+}
+
+.rating-value {
+    color: var(--color-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Responsive */
 @media (max-width: 480px) {
-    html {
-        font-size: calc(var(--font-size-base) - 1px);
+    .screen {
+        padding: var(--space-16);
     }
-
-    h1 {
-        font-size: var(--font-size-3xl);
+    
+    .menu-card {
+        padding: var(--space-16);
+        gap: var(--space-12);
     }
-
-    h2 {
-        font-size: var(--font-size-2xl);
+    
+    .player-card {
+        padding: var(--space-12);
+        gap: var(--space-12);
     }
-
-    h3 {
+    
+    .avatar {
+        width: 60px;
+        height: 60px;
         font-size: var(--font-size-xl);
     }
-
-    .container {
-        padding-left: var(--space-12);
-        padding-right: var(--space-12);
+    
+    .logo {
+        font-size: var(--font-size-3xl);
+    }
+    
+    button {
+        padding: var(--space-8) var(--space-16);
+    }
+    
+    .header {
+        margin-bottom: var(--space-16);
+    }
+    
+    .search-filters {
+        gap: var(--space-8);
+        margin-bottom: var(--space-16);
+    }
+    
+    .rating {
+        padding: var(--space-12);
     }
 }
-
-@font-face {
-    font-family: 'FKGroteskNeue';
-    src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
-        format('woff2');
-}
-```
